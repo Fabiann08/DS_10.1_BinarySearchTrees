@@ -16,6 +16,18 @@ public:
 	void setMonth(int month);
 	void setYear(int year);
 	bool operator==(const Date& rightHandItem) const;
+	friend ostream& operator<<(ostream& out, const Date& d)
+	{
+		out << d.day << "/" << d.month << "/" << d.year;
+		return out;
+	}
+	friend istream& operator>>(istream& in, Date& d)
+	{
+		int day, month, year;
+		in >> day >> month >> year;
+		d = Date(day, month, year);
+		return in;
+	}
 };
 Date::Date()
 {

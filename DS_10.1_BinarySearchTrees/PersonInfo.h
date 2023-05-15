@@ -30,7 +30,14 @@ public:
 	{
 		string name;
 		int day, month, year;
-		in >> name >> day >> month >> year;
+		cout << "Enter Name: ";
+		in >> name;
+		cout << "Enter day: ";
+		in >> day;
+		cout << "Enter month: ";
+		in >> month;
+		cout << "Enter year: ";
+		in >> year;
 		rightHandItem.setName(name);
 		rightHandItem.setAge(Date(day, month, year));
 		return in;
@@ -82,5 +89,4 @@ bool PersonInfo::operator<=(const PersonInfo& rightHandItem) const
 {
 	return (name <= rightHandItem.name);
 }
-
 #endif

@@ -75,19 +75,7 @@ public:
 	// Overloaded Operator Section.
 	//------------------------------------------------------------
 	BinarySearchTree<ItemType>& operator=(const BinarySearchTree<ItemType>& rightHandSide);
-	//changed here-----------
-	/*
-	friend ostream& operator<<(ostream& out, const BinarySearchTree<ItemType>& tree) {
-		tree.inorderTraverse([&out](const ItemType& item) {out << item << " ";});
-		return out;
-	}
-	friend istream& operator>>(istream& in, BinarySearchTree<ItemType>& tree)
-	{
-		ItemType item;
-		in >> item;
-		tree.add(item);
-		return in;
-	}*/
+
 }; // end BinarySearchTree
 // Inserts a new item into the binary search tree to which subTreePtr points.
 template < class ItemType>
@@ -345,8 +333,7 @@ void BinarySearchTree<ItemType>::postorderTraverse(void visit(ItemType&)) const
 // Overloaded Operator Section.
 //------------------------------------------------------------
 template < class ItemType>
-BinarySearchTree<ItemType>& BinarySearchTree<ItemType>::operator=(const
-	BinarySearchTree<ItemType>& rightHandSide)
+BinarySearchTree<ItemType>& BinarySearchTree<ItemType>::operator=(const BinarySearchTree<ItemType>& rightHandSide)
 {
 	if (this != &rightHandSide)
 	{
