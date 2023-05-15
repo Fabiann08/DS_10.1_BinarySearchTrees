@@ -24,8 +24,10 @@ int main()
 
         switch (choice) {
         case 1: {
-            
-            cin >> database;
+            //cin >> database;
+            PersonInfo person;
+            cin >> person;
+            database.addPerson(person);
             cout << "Person added successfully." << endl;
             break;
         }
@@ -49,11 +51,15 @@ int main()
             database.modifyPerson(personOld, personNew);
             break;
         }
-        case 4: {
+        case 4: 
+        {
             string name;
+            Date date;
             cout << "Enter person's name to search: ";
             cin >> name;
-            database.searchPersonByName(name);
+            cout << "Enter person's birthday to search: ";
+            cin >> date;
+            database.searchPersonByName(name, date);
             break;
         }
         case 5: 

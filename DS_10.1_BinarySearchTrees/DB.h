@@ -27,7 +27,7 @@ public:
 
 	// Accessors
 	void displayAllPersons();
-	void searchPersonByName(string name);
+	void searchPersonByName(string name, Date date);
 	void displayBirthdays();
 
 	// Overloaded operators
@@ -63,35 +63,39 @@ void DB::addPerson(PersonInfo person)
 {
 	db.add(person);
 	numberOfpersons++;
-}
+}//works
 void DB::removePerson(PersonInfo person)
 {
 	db.remove(person);
 	numberOfpersons--;
-}
+}//works
 void DB::modifyPerson(PersonInfo oldPerson, PersonInfo newPerson)
 {
 	db.remove(oldPerson);
 	db.add(newPerson);
-}//new
+}//works
 void DB::displayAllPersons()
-{//works
-	db.inorderTraverse(display<PersonInfo>);
-}
-void DB::searchPersonByName(string name)
 {
+	db.inorderTraverse(display<PersonInfo>);
+}//works
+void DB::searchPersonByName(string name, Date date)
+{
+	//PersonInfo person1("John", Date(1, 1, 1990));
+
 	PersonInfo person;
 	person.setName(name);
+	person.setAge(date);
 	if (db.contains(person))
 	{
 		cout << "Found: " << endl;
-		db.getEntry(person);
+		PersonInfo foundPerson = db.getEntry(person); // Store the returned object
+		cout << foundPerson << endl; // Display the found person
 	}
 	else
 	{
 		cout << "Person not found." << endl;
 	}
-}
+}////
 
 void DB::displayBirthdays()
 {

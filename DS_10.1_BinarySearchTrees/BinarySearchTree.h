@@ -289,10 +289,9 @@ void BinarySearchTree<ItemType>::clear()
 {
 	this->destroyTree(rootPtr);
 	rootPtr = nullptr;
-}
+}/////////////////////////////////////////////
 template < class ItemType>
-ItemType BinarySearchTree<ItemType>::getEntry(const ItemType& anEntry) const
-throw(PrecondViolatedExcep)
+ItemType BinarySearchTree<ItemType>::getEntry(const ItemType& anEntry) const throw(PrecondViolatedExcep)
 {
 	BinaryNode<ItemType>* tempTree = nullptr;
 	bool isSuccessful = false;

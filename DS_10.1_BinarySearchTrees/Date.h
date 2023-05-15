@@ -24,7 +24,12 @@ public:
 	friend istream& operator>>(istream& in, Date& d)
 	{
 		int day, month, year;
-		in >> day >> month >> year;
+		cout << "Enter day: ";
+		in >> day;
+		cout << "Enter month: ";
+		in >> month;
+		cout << "Enter year: ";
+		in >> year;
 		d = Date(day, month, year);
 		return in;
 	}
