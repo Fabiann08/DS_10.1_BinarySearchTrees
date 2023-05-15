@@ -27,8 +27,8 @@ public:
 	void displayPersonsByFullName(string Name);
 	void displayPersonsByBirthDate(Date birthDate);
 	void displayPersonsByBirthDateRange(Date minBirthDate, Date maxBirthDate);
-	friend ostream& operator<<(ostream& out, const DB& rightHandItem);
-	friend istream& operator>>(istream& in, DB& rightHandItem);
+	/*friend ostream& operator<<(ostream& out, const DB& rightHandItem);
+	friend istream& operator>>(istream& in, DB& rightHandItem); */
 };
 DB::DB()
 {
@@ -89,16 +89,6 @@ void DB::displayPersonsByBirthDateRange(Date minBirthDate, Date maxBirthDate)
 	db.getEntry(person);
 	person.setAge(maxBirthDate);
 	db.getEntry(person);
-}
-ostream& operator<<(ostream& out, const DB& rightHandItem)
-{
-	out << rightHandItem.db;
-	return out;
-}
-istream& operator>>(istream& in, DB& rightHandItem)
-{
-	in >> rightHandItem.db;
-	return in;
 }
 
 #endif

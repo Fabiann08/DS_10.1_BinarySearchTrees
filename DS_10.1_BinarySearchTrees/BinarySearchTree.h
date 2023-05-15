@@ -76,6 +76,7 @@ public:
 	//------------------------------------------------------------
 	BinarySearchTree<ItemType>& operator=(const BinarySearchTree<ItemType>& rightHandSide);
 	//changed here-----------
+	/*
 	friend ostream& operator<<(ostream& out, const BinarySearchTree<ItemType>& tree) {
 		tree.inorderTraverse([&out](const ItemType& item) {out << item << " ";});
 		return out;
@@ -86,7 +87,7 @@ public:
 		in >> item;
 		tree.add(item);
 		return in;
-	}
+	}*/
 }; // end BinarySearchTree
 // Inserts a new item into the binary search tree to which subTreePtr points.
 template < class ItemType>
