@@ -12,7 +12,7 @@ int main()
 
     while (!quit)
     {
-        cout << "Options Menu:" << endl;
+        cout << "\nOptions Menu:" << endl;
         cout << "1. Enter person's data." << endl;
         cout << "2. Remove person's data." << endl;
         cout << "3. Modify person's data." << endl;
@@ -32,32 +32,33 @@ int main()
         case 2: 
         {
             PersonInfo person;
+            cout << "Enter the person to remove:\n";
             cin >> person;
             database.removePerson(person);
             cout << "Person removed successfully." << endl;
             break;
         }
-        case 3: 
+        case 3:
         {
             PersonInfo personOld;
             PersonInfo personNew;
             cout << "Enter the person to modify: ";
             cin >> personOld;
-            cout << "Mpodify their contents: ";
+            cout << "Modify their contents: ";
             cin >> personNew;
             database.modifyPerson(personOld, personNew);
             break;
         }
         case 4: {
             string name;
-            cout << "Enter person's name to remove: ";
+            cout << "Enter person's name to search: ";
             cin >> name;
             database.searchPersonByName(name);
             break;
         }
         case 5: 
         {
-            database.displayAllPersons();
+            database.displayBirthdays();
             break;
         }
         case 6: 

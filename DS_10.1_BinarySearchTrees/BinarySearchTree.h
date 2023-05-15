@@ -332,14 +332,16 @@ void BinarySearchTree<ItemType>::postorderTraverse(void visit(ItemType&)) const
 //------------------------------------------------------------
 // Overloaded Operator Section.
 //------------------------------------------------------------
-template < class ItemType>
+template <class ItemType>
 BinarySearchTree<ItemType>& BinarySearchTree<ItemType>::operator=(const BinarySearchTree<ItemType>& rightHandSide)
 {
 	if (this != &rightHandSide)
 	{
-		destroyTree(rootPtr);
-		rootPtr = copyTree(rightHandSide.rootPtr);
-	}//end if
+		BinaryNodeTree<ItemType>::destroyTree(rootPtr);
+		rootPtr = BinaryNodeTree<ItemType>::copyTree(rightHandSide.rootPtr);
+	}
+
 	return *this;
 }
+
 #endif /* BinarySearchTree_h */
